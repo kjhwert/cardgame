@@ -40,8 +40,8 @@ export default function Card() {
 
     return (
         <div className="container w-full h-full flex flex-col items-center font-melody">
-            <div className="logo w-full my-20">
-
+            <div className="logo w-full mt-10 mb-16 text-center">
+                <span className="font-semibold text-4xl">나랑놀자</span>
             </div>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedBackToFront={0.5} flipSpeedBackToFront={0.5}>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
