@@ -49,10 +49,10 @@ export default function Card() {
                         <span className="font-semibold mr-2">Q</span>
                         <span className="border-b-2 border-white">{front.q}</span>
                     </div>
-                    <div className="pb-10 flex flex-col mx-10 text-3xl">
-                        <span className="text-left">{front.y}</span>
-                        <span className="text-center">VS</span>
-                        <span className="text-right">{front.n}</span>
+                    <div className="pb-10 flex flex-col mx-10">
+                        <span className="text-left text-2xl">{front.y}</span>
+                        <span className="text-center text-3xl">VS</span>
+                        <span className="text-right text-2xl">{front.n}</span>
                     </div>
                 </div>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
@@ -60,10 +60,10 @@ export default function Card() {
                         <span className="font-semibold mr-2">Q</span>
                         <span className="border-b-2 border-white">{back.q}</span>
                     </div>
-                    <div className="pb-10 flex flex-col mx-10 text-3xl">
-                        <span className="text-left">{back.y}</span>
-                        <span className="text-center">VS</span>
-                        <span className="text-right">{back.n}</span>
+                    <div className="pb-10 flex flex-col mx-10">
+                        <span className="text-left text-2xl">{back.y}</span>
+                        <span className="text-center text-3xl">VS</span>
+                        <span className="text-right text-2xl">{back.n}</span>
                     </div>
                 </div>
             </ReactCardFlip>
