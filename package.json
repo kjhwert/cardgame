@@ -15,9 +15,9 @@
   "scripts": {
     "start": "react-scripts start",
     "tailwind": "tailwind build src/css/tailwind.css -c tailwind.config.js -o src/css/index.css",
-    "build": "react-scripts build && npm run tailwind",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +33,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://kjhwert.github.io/cardgame"
 }
