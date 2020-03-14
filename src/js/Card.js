@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "../css/card.css";
 import ReactCardFlip from 'react-card-flip';
 import data from "./Data";
+import image02 from "../images/card_image02.png";
 
 export default function Card() {
 
@@ -43,30 +44,38 @@ export default function Card() {
             <div className="logo w-full mt-10 mb-16 text-center">
                 <span className="font-semibold text-4xl">나랑놀자</span>
             </div>
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedBackToFront={0.5} flipSpeedBackToFront={0.5}>
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedBackToFront={0.5}>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
-                    <div className="pt-10 mb-32 text-2xl flex justify-center">
+                    <div
+                        className="pt-10 mb-20 text-2xl flex justify-center">
                         <span className="font-semibold mr-2">Q</span>
                         <span className="border-b-2 border-white">{front.q}</span>
                     </div>
-                    <div className="pb-10 flex flex-col mx-10">
+                    <div
+                        style={{backgroundImage:`url(${image02})`, backgroundSize:'100%'}}
+                        className="pb-10 flex flex-col mx-10 bg-no-repeat">
                         <span className="text-left text-2xl">{front.y}</span>
-                        <span className="text-center text-3xl">VS</span>
+                        <div className="w-full h-16"></div>
                         <span className="text-right text-2xl">{front.n}</span>
                     </div>
                 </div>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
-                    <div className="pt-10 mb-32 text-2xl flex justify-center">
+                    <div className="pt-10 mb-20 text-2xl flex justify-center">
                         <span className="font-semibold mr-2">Q</span>
                         <span className="border-b-2 border-white">{back.q}</span>
                     </div>
-                    <div className="pb-10 flex flex-col mx-10">
+                    <div
+                        style={{backgroundImage:`url(${image02})`, backgroundSize:'100%'}}
+                        className="pb-10 flex flex-col mx-10 bg-no-repeat">
                         <span className="text-left text-2xl">{back.y}</span>
-                        <span className="text-center text-3xl">VS</span>
+                        <div className="w-full h-16"></div>
                         <span className="text-right text-2xl">{back.n}</span>
                     </div>
                 </div>
             </ReactCardFlip>
+            <div className="mb-20">
+
+            </div>
         </div>
     )
 }
