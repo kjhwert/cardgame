@@ -1,9 +1,9 @@
 import React from 'react';
-import Card from "./js/Card";
+import Routes from "./js/Routes";
 
 function App() {
   return (
-    <Card/>
+    <Routes/>
   );
 }
 
