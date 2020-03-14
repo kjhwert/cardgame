@@ -1,0 +1,8 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url("https://fonts.googleapis.com/css?family=Hi+Melody&display=swap");
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;

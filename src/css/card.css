@@ -1,0 +1,10 @@
+.container {
+    background: linear-gradient(to bottom, #F4C6C3, #F2DBD7);
+    height:812px;
+    color:#534847;
+    font-weight: 700;
+}
+
+.card-container {
+    background: #FBEFEF;
+}
