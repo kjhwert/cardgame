@@ -25,7 +25,7 @@ const Card = (props) => {
 
         setPlayer1(state.player1);
         setPlayer2(state.player2);
-    });
+    },[state, history]);
 
     const getRandomQuestion = () => {
         if (!hasItems())
@@ -62,8 +62,11 @@ const Card = (props) => {
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
                     <div
                         className="pt-10 mb-20 pl-10 text-2xl flex flex-col">
-                        <span className="font-semibold">{player1} 은(는)</span>
-                        <span className="border-b-2 border-white font-hairline">{front.q}</span>
+                        <div>
+                            <span className="font-semibold">Q. {player1} </span>
+                            <span className="font-hairline text-base">은(는)</span>
+                        </div>
+                        <span className="border-b-2 border-white font-hairline text-right pr-10 text-xl">{front.q}</span>
                     </div>
                     <div
                         style={{backgroundImage:`url(${image02})`, backgroundSize:'100%'}}
@@ -75,8 +78,11 @@ const Card = (props) => {
                 </div>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
                     <div className="pt-10 mb-20 pl-10 text-2xl flex flex-col">
-                        <span className="font-semibold">{player2} 은(는)</span>
-                        <span className="border-b-2 border-white font-hairline">{back.q}</span>
+                        <div>
+                            <span className="font-semibold">Q. {player2} </span>
+                            <span className="font-hairline text-base">은(는)</span>
+                        </div>
+                        <span className="border-b-2 border-white font-hairline text-right pr-10 text-xl">{back.q}</span>
                     </div>
                     <div
                         style={{backgroundImage:`url(${image02})`, backgroundSize:'100%'}}
