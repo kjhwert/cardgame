@@ -6,8 +6,21 @@
     left: 0;
     top: 0;
     height: 100%;
+    width: 100%;
 }
 
 .card-container {
     background: #FBEFEF;
+}
+
+input {
+    outline: none;
+}
+
+input:focus {
+    border-bottom: 1px solid #534847;
+}
+
+input::placeholder {
+    color:#ffffff;
 }

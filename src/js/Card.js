@@ -1,17 +1,31 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "../css/card.css";
 import ReactCardFlip from 'react-card-flip';
 import data from "./Data";
 import image02 from "../images/card_image02.png";
 
-export default function Card() {
+const Card = (props) => {
 
     const [isFlipped, setIsFlipped] = useState(false);
+    const [player1, setPlayer1] = useState('');
+    const [player2, setPlayer2] = useState('');
+    const {history} = props;
+    const {state} = props.location;
+
     let items = data;
 
     const hasItems = () => {
         return items.length > 0;
     };
+
+    useEffect(() => {
+        if (!state || !state.player1 || !state.player2) {
+            return history.push('/');
+        }
+
+        setPlayer1(state.player1);
+        setPlayer2(state.player2);
+    });
 
     const getRandomQuestion = () => {
         if (!hasItems())
@@ -40,16 +54,16 @@ export default function Card() {
     };
 
     return (
-        <div className="container w-full h-full flex flex-col items-center font-melody">
+        <div className="container flex flex-col items-center">
             <div className="logo w-full mt-10 mb-16 text-center">
                 <span className="font-semibold text-4xl">나랑놀자</span>
             </div>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedBackToFront={0.5}>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
                     <div
-                        className="pt-10 mb-20 text-2xl flex justify-center">
-                        <span className="font-semibold mr-2">Q</span>
-                        <span className="border-b-2 border-white">{front.q}</span>
+                        className="pt-10 mb-20 pl-10 text-2xl flex flex-col">
+                        <span className="font-semibold">{player1} 은(는)</span>
+                        <span className="border-b-2 border-white font-hairline">{front.q}</span>
                     </div>
                     <div
                         style={{backgroundImage:`url(${image02})`, backgroundSize:'100%'}}
@@ -60,9 +74,9 @@ export default function Card() {
                     </div>
                 </div>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
-                    <div className="pt-10 mb-20 text-2xl flex justify-center">
-                        <span className="font-semibold mr-2">Q</span>
-                        <span className="border-b-2 border-white">{back.q}</span>
+                    <div className="pt-10 mb-20 pl-10 text-2xl flex flex-col">
+                        <span className="font-semibold">{player2} 은(는)</span>
+                        <span className="border-b-2 border-white font-hairline">{back.q}</span>
                     </div>
                     <div
                         style={{backgroundImage:`url(${image02})`, backgroundSize:'100%'}}
@@ -79,3 +93,5 @@ export default function Card() {
         </div>
     )
 }
+
+export default Card;
