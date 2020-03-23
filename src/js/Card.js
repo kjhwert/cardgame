@@ -3,6 +3,7 @@ import "../css/card.css";
 import ReactCardFlip from 'react-card-flip';
 import data from "./Data";
 import image02 from "../images/card_image02.png";
+import Header from "./Header";
 
 const Card = (props) => {
 
@@ -54,10 +55,8 @@ const Card = (props) => {
     };
 
     return (
-        <div className="container flex flex-col items-center">
-            <div className="logo w-full mt-10 mb-16 text-center">
-                <span className="font-semibold text-4xl">나랑놀자</span>
-            </div>
+        <div className="container flex flex-col items-center max-w-full">
+            <Header/>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedBackToFront={0.5}>
                 <div onClick={handleToggle} style={{width:300, height:400}} className="card-container rounded shadow-2xl">
                     <div

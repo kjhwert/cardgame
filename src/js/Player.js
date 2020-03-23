@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "../css/card.css";
 import { Link } from "react-router-dom";
 import Play from "../images/play.png"
+import Header from "./Header";
 
 export default function Player() {
 
@@ -17,10 +18,8 @@ export default function Player() {
     };
 
     return (
-        <div className="container">
-            <div className="logo w-full mt-10 mb-16 text-center">
-                <span className="font-semibold text-4xl">나랑놀자</span>
-            </div>
+        <div className="container max-w-full">
+            <Header/>
             <div className="w-full text-center mb-16">
                 <p>연인과 즐기는 카드게임!</p>
             </div>

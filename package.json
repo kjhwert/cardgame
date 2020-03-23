@@ -18,7 +18,7 @@
     "start": "react-scripts start",
     "tailwind": "tailwind build src/css/tailwind.css -c tailwind.config.js -o src/css/index.css",
     "build": "react-scripts build",
-    "copy" : "cp ./CNAME ./build/CNAME",
+    "copy": "cp ./CNAME ./build/CNAME",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build && yarn copy"
   },
