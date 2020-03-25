@@ -17,12 +17,12 @@ const Menu = (props) => {
             </div>
             <div className="w-full flex px-4 font-basic font-normal">
                 <div className="flex flex-col w-3/5">
-                    <span className="border-b border-t border-black text-xl py-2" onClick={()=> {setTheme(!theme)}}>THEME</span>
+                    <span className="border-b border-t border-black text-xl py-2 pl-1 font-semibold" onClick={()=> {setTheme(!theme)}}>THEME</span>
                     {theme === true &&
                     <div className="py-2 pl-2">
                         <span>준비중입니다</span>
                     </div>}
-                    <span className="border-b border-black text-xl py-2" onClick={()=> {setHelp(!help)}}>HELP</span>
+                    <span className="border-b border-black text-xl py-2 pl-1 font-semibold" onClick={()=> {setHelp(!help)}}>HELP</span>
                     {help === true &&
                     <div className="py-2 pl-2">
                         <span className="text-xs">kjhwert11@gmail.com로 피드백을 보내주세요</span>
